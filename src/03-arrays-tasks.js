@@ -233,10 +233,9 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(arr) {
-  let count = 0;
-  // eslint-disable-next-line no-return-assign
-  return arr.map((x) => count += x);
+function getMovingSum(/* arr */) {
+  // let count = 0;
+  // return arr.map((x) => count += x);
 }
 
 /**
