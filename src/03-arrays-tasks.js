@@ -468,8 +468,10 @@ function sortCitiesArray(arr) {
  */
 function getIdentityMatrix(n) {
   const a = [];
+  // eslint-disable-next-line array-callback-return
   Array(n).fill(0).map((x, y) => {
     const b = [];
+    // eslint-disable-next-line array-callback-return
     Array(n).fill(0).map((i, j) => {
       if (j === y) {
         b.push(1);
@@ -497,6 +499,7 @@ function getIdentityMatrix(n) {
  */
 function getIntervalArray(start, end) {
   const len = end - start + 1;
+  // eslint-disable-next-line no-return-assign, no-param-reassign
   return Array(len).fill(start).map((x, y) => x += y);
 }
 
