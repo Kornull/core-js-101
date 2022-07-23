@@ -68,8 +68,12 @@ function getFactorial(n) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let res = 0;
+  for (let i = n1; i <= n2; i += 1) {
+    res += i;
+  }
+  return res;
 }
 
 
@@ -175,8 +179,16 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const arr = [];
+  const str2 = str.split('');
+  for (let i = 0; i < str2.length; i += 1) {
+    if (!str2.slice(i + 1).includes(str2[i])) {
+      if (!arr.includes(str2[i])) return str2[i];
+    }
+    arr.push(str2[i]);
+  }
+  return null;
 }
 
 
@@ -202,8 +214,23 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  let start;
+  let end;
+  let count1;
+  let count2;
+  if (a < b) {
+    count1 = a;
+    count2 = b;
+  } else {
+    count1 = b;
+    count2 = a;
+  }
+  if (isStartIncluded) start = '[';
+  if (!isStartIncluded) start = '(';
+  if (isEndIncluded) end = ']';
+  if (!isEndIncluded) end = ')';
+  return `${start}${count1}, ${count2}${end}`;
 }
 
 
@@ -219,8 +246,8 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  return str.split('').reverse().join('');
 }
 
 
