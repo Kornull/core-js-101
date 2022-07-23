@@ -606,8 +606,13 @@ function getElementByIndexes(/* arr, indexes */) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  const a = [...arr];
+  const b = [...arr];
+
+  const c = [...a.copyWithin(0, (a.length - 1) / 2 + 1)];
+  const d = [...b.copyWithin((b.length - 1) / 2 + 1, 0)];
+  return Array.from(new Set(c.concat(d)));
 }
 
 
