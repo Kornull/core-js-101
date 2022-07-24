@@ -445,8 +445,24 @@ function getCommonDirectoryPath(/* pathes */) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
+function getMatrixProduct(m1, m2) {
+  const arr = [];
+  for (let i = 0; i < m1.length; i += 1) {
+    // console.log(m1[i]);
+    const arr2 = [];
+    for (let j = 0; j < m2.length; j += 1) {
+      let num = 0;
+      for (let y = 0; y < m2.length; y += 1) {
+        // console.log(m1[i][y], ' ', m2[j][y])
+        num += m1[i][y] * m2[y][j];
+        // console.log('NUM', num);
+      }
+      // eslint-disable-next-line no-restricted-globals
+      if (!isNaN(num)) arr2.push(num);
+    }
+    arr.push(arr2);
+  }
+  return arr;
 }
 
 
