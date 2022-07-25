@@ -550,7 +550,6 @@ function distinct(arr) {
  */
 function group(array, keySelector, valueSelector) {
   const cacheCountries = new Map();
-  // eslint-disable-next-line array-callback-return
   array.map((el) => {
     const key = keySelector(el);
     const val = valueSelector(el);
@@ -559,6 +558,7 @@ function group(array, keySelector, valueSelector) {
     } else {
       cacheCountries.get(key).push(val);
     }
+    return '';
   });
   return cacheCountries;
 }
